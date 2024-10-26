@@ -1,4 +1,3 @@
-import 'package:expenseapp/screens/Homepage.dart';
 import 'package:expenseapp/screens/Register.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,7 +10,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +49,6 @@ class _LoginState extends State<Login> {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 8.0),
                       child: Form(
-                        key: _formKey,
                         child: TextFormField(
                           style: TextStyle(color: Colors.white),
                           decoration: InputDecoration(
@@ -137,20 +134,7 @@ class _LoginState extends State<Login> {
                     ),
                     const SizedBox(height: 20),
                     MaterialButton(
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          // If the form is valid, display a snackbar. In the real world,
-                          // you'd often call a server or save the information in a database.
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Processing Data')),
-                          );
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Homepage(),
-                              ));
-                        }
-                      },
+                      onPressed: () {},
                       color: Colors.pinkAccent,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12)),

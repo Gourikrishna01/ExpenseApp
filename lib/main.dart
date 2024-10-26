@@ -1,7 +1,11 @@
+import 'package:expenseapp/models/ExpenseModel.dart';
 import 'package:expenseapp/screens/Firstpage.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter((ExpenseModelAdapter()));
   runApp(const MyApp());
 }
 
